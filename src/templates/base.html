@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>simple flask web app</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+  </head>
+
+<body>
+    <div class="hero is-primary is-fullheight">
+
+        <div class="hero-head">
+            <nav class="navbar">
+                <div class="container">
+                    <div class="navbar-brand">
+                    <a class="navbar-item" href="{{ url_for('index') }}" style="font-weight:bold;">
+                        qr service
+                    </a>     
+                    </div>                
+                </div>
+            </nav>
+        </div>
+
+        <div class="hero-body" style="align-items: flex-start;">
+            <div class="container has-text-centered">
+               {% block content %}
+               {% endblock %}
+            </div>
+        </div>
+  
+        <footer class="footer">
+        <div class="content has-text-centered" style="color:gray">
+            Simple qr-service by <strong><a href="https://www.linkedin.com/in/georg-boegerl-a96453" target="new">Georg Boegerl</a></strong>.
+         </div>
+        </footer>
+
+    </div>
+</body>
+</html>
