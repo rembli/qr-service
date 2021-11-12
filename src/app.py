@@ -4,21 +4,8 @@ from flasgger import Swagger
 import qrcode
 from io import BytesIO
 
-#####################################################
-# INIT FLASK APP
-#####################################################
-
 app = Flask(__name__, static_url_path='/static')
-
-#####################################################
-# SWAGGER UI
-#####################################################
-
 swagger = Swagger(app)
-
-#####################################################
-# HOMEPAGE
-#####################################################
 
 @app.route('/')
 def index():
@@ -40,7 +27,7 @@ def qr():
     """   
 
     input_string = request.args.get('input_string')
-    print (input_string)
+    input_string = (input_string[:512] + '..') if len(input_string) > 512 else input_string
 
     img_io = BytesIO()
     img = qrcode.make(input_string)
@@ -51,10 +38,6 @@ def qr():
 @app.route('/health')
 def health():
     return 'OK'
-
-#####################################################
-# RUN FLASK APP
-#####################################################
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0")
