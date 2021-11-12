@@ -11,7 +11,7 @@ pip freeze > requirements.txt
 ## build local docker image   
 docker build -t rembli/qr-service .   
 docker push rembli/qr-service   
-docker run --name qr-service -p 5000:5000 rembli/qr-service    
+docker run -p 5000:5000 rembli/qr-service    
 
 # deploy to azure   
 ./azure-setup.sh   

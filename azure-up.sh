@@ -2,7 +2,7 @@
 
 # Variables
 appName="rembli-qr-service"
-resourceGroup="rembli-qr-service"
+resourceGroup="lab2"
 containerImage="rembli/qr-service"
 
 # build container

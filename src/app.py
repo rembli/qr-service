@@ -27,7 +27,7 @@ def qr():
     """   
 
     input_string = request.args.get('input_string')
-    input_string = (input_string[:512] + '..') if len(input_string) > 512 else input_string
+    input_string = input_string[:512]
 
     img_io = BytesIO()
     img = qrcode.make(input_string)
